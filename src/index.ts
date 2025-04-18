@@ -64,21 +64,21 @@ async function mainAsync(fileNames: string[]): Promise<void> {
 
             logos?.forEach((logo) => {
                 if (logo.description)
-                    console.log(`"${logo.description}" found in in file ${fileName}`);
+                    console.log(`"${logo.description}" файлыг оллоо ${fileName}`);
                 if (logo.score)
                     scores.push(logo.score);
             });
 
             if (scores.length > 0) {
                 const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
-                console.log(`Average score for ${fileName}: ${avg}`);
+                console.log(`Дундаж оноо ${fileName}: ${avg}`);
             } else {
-                console.log(`No logos detected in file ${fileName}`);
+                console.log(`Тухайн файлд лого илрээгүй ${fileName}`);
             }
 
         } catch (err: any) {
             if (err.code === 'ENOENT') {
-                console.log(`File ${fileName} not found`);
+                console.log(`Файл ${fileName} олдсонгүй`);
             } else {
                 console.error(`Error processing ${fileName}:`, err.message || err);
             }
